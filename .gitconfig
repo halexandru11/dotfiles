@@ -1,0 +1,7 @@
+[user]
+	email =77728536+halexandru11@users.noreply.github.com 
+	name = halexandru11
+[core]
+	editor = nvim
+[init]
+	defaultBranch = main
