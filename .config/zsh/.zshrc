@@ -12,6 +12,24 @@ HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.zsh_history
 
+# Bind Ctrl+Backspace to delete a word
+# run the command `showkey -a` to replace '^H' in case it does not work
+bindkey '^H' backward-kill-word
+
+(( ${+ZSH_HIGHLIGHT_STYLES} )) || typeset -A ZSH_HIGHLIGHT_STYLES
+ZSH_HIGHLIGHT_STYLES[path]=none
+ZSH_HIGHLIGHT_STYLES[path_prefix]=none
+
+# Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vi'
+else
+  export EDITOR='nvim'
+fi
+
+# we need this to make sure that autojump works
+. /usr/share/autojump/autojump.sh
+
 # Use modern completion system
 zmodload zsh/complist
 compinit

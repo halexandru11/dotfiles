@@ -14,6 +14,7 @@ curl -fOL --create-dirs --output-dir .local/share/fonts "https://github.com/ryan
 # Create symbolic links
 ln -s `pwd`/.zshrc ~/.zshrc
 ln -s `pwd`/.config/zsh ~/.config/zsh
+ln -s `pwd`/.config/nvim ~/.config/nvim
 ln -s `pwd`/powerlevel10k ~/powerlevel10k
 ln -s `pwd`/.p10k.zsh ~/.p10k.zsh
 ln -s `pwd`/.gitconfig ~/.gitconfig

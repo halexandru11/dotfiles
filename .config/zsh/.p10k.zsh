@@ -193,7 +193,7 @@
   typeset -g POWERLEVEL9K_OS_ICON_FOREGROUND=255
   typeset -g POWERLEVEL9K_OS_ICON_BACKGROUND=125
   # Custom icon.
-  # typeset -g POWERLEVEL9K_OS_ICON_CONTENT_EXPANSION='⭐'
+  typeset -g POWERLEVEL9K_OS_ICON_CONTENT_EXPANSION=' '
 
   ################################[ prompt_char: prompt symbol ]################################
   # Transparent background.
@@ -900,7 +900,7 @@
   ###########[ timewarrior: timewarrior tracking status (https://timewarrior.net/) ]############
   # Timewarrior color.
   typeset -g POWERLEVEL9K_TIMEWARRIOR_FOREGROUND=255
-  typeset -g POWERLEVEL9K_TIMEWARRIOR_BACKGROUND=8
+  typeset -g POWERLEVEL9K_TIMEWARRIOR_BACKGROUND=240
 
   # If the tracked task is longer than 24 characters, truncate and append "…".
   # Tip: To always display tasks without truncation, delete the following parameter.
@@ -1114,8 +1114,8 @@
 
   ##############################[ node_version: node.js version ]###############################
   # Node version color.
-  typeset -g POWERLEVEL9K_NODE_VERSION_FOREGROUND=7
-  typeset -g POWERLEVEL9K_NODE_VERSION_BACKGROUND=2
+  typeset -g POWERLEVEL9K_NODE_VERSION_FOREGROUND=254
+  typeset -g POWERLEVEL9K_NODE_VERSION_BACKGROUND=22
   # Show node version only when in a directory tree containing package.json.
   typeset -g POWERLEVEL9K_NODE_VERSION_PROJECT_ONLY=true
   # Custom icon.
@@ -1141,7 +1141,7 @@
 
   ###############[ dotnet_version: .NET version (https://dotnet.microsoft.com) ]################
   # .NET version color.
-  typeset -g POWERLEVEL9K_DOTNET_VERSION_FOREGROUND=7
+  typeset -g POWERLEVEL9K_DOTNET_VERSION_FOREGROUND=254
   typeset -g POWERLEVEL9K_DOTNET_VERSION_BACKGROUND=57
   # Show .NET version only when in a .NET project subdirectory.
   typeset -g POWERLEVEL9K_DOTNET_VERSION_PROJECT_ONLY=true
@@ -1191,8 +1191,8 @@
 
   ###[ package: name@version from package.json (https://docs.npmjs.com/files/package.json) ]####
   # Package color.
-  typeset -g POWERLEVEL9K_PACKAGE_FOREGROUND=0
-  typeset -g POWERLEVEL9K_PACKAGE_BACKGROUND=6
+  typeset -g POWERLEVEL9K_PACKAGE_FOREGROUND=235
+  typeset -g POWERLEVEL9K_PACKAGE_BACKGROUND=37
 
   # Package format. The following parameters are available within the expansion.
   #
@@ -1746,8 +1746,8 @@
 
   ####################################[ time: current time ]####################################
   # Current time color.
-  typeset -g POWERLEVEL9K_TIME_FOREGROUND=0
-  typeset -g POWERLEVEL9K_TIME_BACKGROUND=7
+  typeset -g POWERLEVEL9K_TIME_FOREGROUND=236
+  typeset -g POWERLEVEL9K_TIME_BACKGROUND=254
   # Format for the current time: 09:51:02. See `man 3 strftime`.
   typeset -g POWERLEVEL9K_TIME_FORMAT='%D{%H:%M:%S}'
   # If set to true, time will update when you hit enter. This way prompts for the past
