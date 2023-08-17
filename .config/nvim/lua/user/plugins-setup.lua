@@ -29,13 +29,14 @@ if not status then
 end
 
 return packer.startup(function(use)
-	-- packer can manage itself
-	use 'wbthomason/packer.nvim'
-
+	
+	use "wbthomason/packer.nvim"  -- packer can manage itself
+  use "nvim-lua/popup.nvim"  -- An implementation of the Popup API from vim in Neovim. Hope to upstream this eventually.
   use "nvim-lua/plenary.nvim" -- lua functions that many plugins use
+  use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and lsp
 
 	-- for creating custom colorscheme
-	use 'rktjmp/lush.nvim'
+	use "rktjmp/lush.nvim"
 
   -- github copilot
 	use "github/copilot.vim"
@@ -79,9 +80,13 @@ return packer.startup(function(use)
   -- Telescope
   use { "nvim-telescope/telescope.nvim", tag="0.1.0" }
   use "nvim-telescope/telescope-media-files.nvim"
+  use "JoosepAlviste/nvim-ts-context-commentstring"
 
   -- Treesitter
   use { "nvim-treesitter/nvim-treesitter", tag="v0.7.2", run = ":TSUpdate" }
+
+  -- Git
+  use { "lewis6991/gitsigns.nvim", tag="v0.6" }
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
