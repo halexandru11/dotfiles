@@ -61,5 +61,4 @@ keymap.set("n", "<leader>e", ":Ex<CR>", { noremap = true, silent = true })
 
 -- Telescope
 keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", opts)
--- keymap.set("n", "<leader>ff", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
-keymap.set("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
+keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", opts)

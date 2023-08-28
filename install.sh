@@ -1,3 +1,5 @@
+#!/bin/bash
+
 sudo apt update && sudo apt upgrade -y
 sudo apt-get update && sudo apt-get upgrade -y
 
@@ -22,3 +24,9 @@ ln -s `pwd`/.gitconfig ~/.gitconfig
 rm -rf ~/.local/share/fonts
 ln -s `pwd`/.local/share/fonts ~/.local/share/fonts
 fc-cache -f -v
+
+# Install packages
+sudo apt install -y \
+  autojump \
+  cmatrix \
+  neovim ;

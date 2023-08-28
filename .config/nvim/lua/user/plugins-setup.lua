@@ -75,7 +75,7 @@ return packer.startup(function(use)
   use "neovim/nvim-lspconfig" -- enable LSP
   use "williamboman/mason.nvim" -- simple to use language server installer
   use "williamboman/mason-lspconfig.nvim" -- simple to use language server installer
-  use 'jose-elias-alvarez/null-ls.nvim' -- LSP diagnostics and code actions
+  use { "jose-elias-alvarez/null-ls.nvim", branch="0.7-compat" } -- LSP diagnostics and code actions
 
   -- Telescope
   use { "nvim-telescope/telescope.nvim", tag="0.1.0" }

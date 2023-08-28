@@ -27,9 +27,6 @@ else
   export EDITOR='nvim'
 fi
 
-# we need this to make sure that autojump works
-. /usr/share/autojump/autojump.sh
-
 # Use modern completion system
 zmodload zsh/complist
 compinit
@@ -86,3 +83,8 @@ source /home/halexandru11/.config/zsh/themes/powerlevel10k/powerlevel10k.zsh-the
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+
+# we need this to make sure that autojump works
+unalias j
+. /usr/share/autojump/autojump.sh
+
