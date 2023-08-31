@@ -1,6 +1,5 @@
 #!/bin/sh
 alias ls='ls --color=auto'
-alias j='z'
 alias f='zi'
 alias zsh-update-plugins="find "$ZDOTDIR/plugins" -type d -exec test -e '{}/.git' ';' -print0 | xargs -I {} -0 git -C {} pull -q"
 
@@ -33,3 +32,6 @@ alias gpg-retrieve="gpg2 --keyserver-options auto-key-retrieve --receive-keys"
 
 # systemd
 alias list_systemctl="systemctl list-unit-files --state=enabled"
+
+# transform `j <dir> && nvim .` into `jn <dir>`
+alias jn="j && nvim ."

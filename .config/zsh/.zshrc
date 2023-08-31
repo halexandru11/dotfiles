@@ -85,6 +85,4 @@ source /home/halexandru11/.config/zsh/themes/powerlevel10k/powerlevel10k.zsh-the
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
 
 # we need this to make sure that autojump works
-unalias j
 . /usr/share/autojump/autojump.sh
-
