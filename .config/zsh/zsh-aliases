@@ -33,5 +33,17 @@ alias gpg-retrieve="gpg2 --keyserver-options auto-key-retrieve --receive-keys"
 # systemd
 alias list_systemctl="systemctl list-unit-files --state=enabled"
 
-# transform `j <dir> && nvim .` into `jn <dir>`
-alias jn="j && nvim ."
+# transform `nvim .` into `n` & `nvim <file>` into `n <file>`
+n() {
+  if [ $# -eq 0 ]; then
+    nvim .
+  else
+    nvim "$@"
+  fi
+}
+
+# transform `j <dir> && nvim .` into `jn <dir>` 
+jn() {
+  j "$@" && n
+}
+
