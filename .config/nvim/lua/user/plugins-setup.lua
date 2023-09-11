@@ -32,7 +32,6 @@ return packer.startup(function(use)
 	use("wbthomason/packer.nvim") -- packer can manage itself
 	use("nvim-lua/popup.nvim") -- An implementation of the Popup API from vim in Neovim. Hope to upstream this eventually.
 	use("nvim-lua/plenary.nvim") -- lua functions that many plugins use
-	use("windwp/nvim-autopairs") -- Autopairs, integrates with both cmp and lsp
 
 	-- for creating custom colorscheme
 	use("rktjmp/lush.nvim")
@@ -81,6 +80,10 @@ return packer.startup(function(use)
 	use({ "nvim-telescope/telescope.nvim", tag = "0.1.0" })
 	use("nvim-telescope/telescope-media-files.nvim")
 	use("JoosepAlviste/nvim-ts-context-commentstring")
+
+	-- auto close and rename html tag
+	use("windwp/nvim-autopairs") -- Autopairs, integrates with both cmp and lsp
+	use("windwp/nvim-ts-autotag") -- Auto close and auto rename html tag
 
 	-- Treesitter
 	use({ "nvim-treesitter/nvim-treesitter", tag = "v0.7.2", run = ":TSUpdate" })
