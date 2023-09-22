@@ -21,6 +21,7 @@ ZSH_HIGHLIGHT_STYLES[path]=none
 ZSH_HIGHLIGHT_STYLES[path_prefix]=none
 
 PATH="$PATH:/usr/bin/npm"
+PATH="$PATH:/home/halexandru11/programs/flutter/bin"
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
@@ -64,6 +65,8 @@ autoload -Uz colors && colors
 
 ## Exports
 export ZDOTDIR=$HOME/.config/zsh
+export ANDROID_HOME=$HOME/Android/Sdk
+export CHROME_EXECUTABLE="/usr/bin/chromium-browser"
 
 ## Useful functions
 source $ZDOTDIR/zsh-functions
