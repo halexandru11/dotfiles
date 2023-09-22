@@ -74,10 +74,10 @@ return packer.startup(function(use)
 	use("neovim/nvim-lspconfig") -- enable LSP
 	use("williamboman/mason.nvim") -- simple to use language server installer
 	use("williamboman/mason-lspconfig.nvim") -- simple to use language server installer
-	use({ "jose-elias-alvarez/null-ls.nvim", branch = "0.7-compat" }) -- LSP diagnostics and code actions
+	use("jose-elias-alvarez/null-ls.nvim") -- LSP diagnostics and code actions
 
 	-- Telescope
-	use({ "nvim-telescope/telescope.nvim", tag = "0.1.0" })
+	use("nvim-telescope/telescope.nvim")
 	use("nvim-telescope/telescope-media-files.nvim")
 	use("JoosepAlviste/nvim-ts-context-commentstring")
 
@@ -86,10 +86,10 @@ return packer.startup(function(use)
 	use("windwp/nvim-ts-autotag") -- Auto close and auto rename html tag
 
 	-- Treesitter
-	use({ "nvim-treesitter/nvim-treesitter", tag = "v0.7.2", run = ":TSUpdate" })
+	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
 
 	-- Git
-	use({ "lewis6991/gitsigns.nvim", tag = "v0.6" })
+	use("lewis6991/gitsigns.nvim")
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

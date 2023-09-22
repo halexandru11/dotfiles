@@ -5,25 +5,27 @@ end
 
 configs.setup({
 	ensure_installed = {
+    "bash",
+    "css",
+    "dart",
+    "html",
 		"javascript",
-		"tsx",
-		"typescript",
-		"html",
-		"css",
-		"scss",
-		"json",
-		"yaml",
+    "json",
 		"lua",
-		"bash",
 		"python",
 		"regex",
+    "scss",
+    "tsx",
+    "typescript",
+    "yaml",
 	},
 	sync_install = false,
+  auto_install = true,
 	ignore_install = { "" }, -- List of parsers to ignore installing
 	autopairs = { enable = true },
 	highlight = {
 		enable = true, -- false will disable the whole extension
-		disable = { "sh" }, -- list of language that will be disabled
+		disable = { "" }, -- list of language that will be disabled
 		additional_vim_regex_highlighting = false,
 	},
 	indent = { enable = true, disable = { "yaml" } },
