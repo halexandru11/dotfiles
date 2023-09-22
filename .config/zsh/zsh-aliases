@@ -1,5 +1,6 @@
 #!/bin/sh
 alias ls='ls --color=auto'
+alias la='ls -a'
 alias f='zi'
 alias zsh-update-plugins="find "$ZDOTDIR/plugins" -type d -exec test -e '{}/.git' ';' -print0 | xargs -I {} -0 git -C {} pull -q"
 
@@ -13,6 +14,16 @@ alias mirrora="sudo reflector --latest 50 --number 20 --sort age --save /etc/pac
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
+
+# git aliases
+alias gs='git status'
+alias ga='git add .'
+alias gaa='git add --all'
+alias gc='git commit -m'
+alias gp='git push'
+alias gpl='git pull'
+alias gco='git checkout'
+alias gm='git merge'
 
 # easier to read disk
 alias df='df -h'                          # human-readable sizes
