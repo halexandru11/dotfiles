@@ -22,8 +22,9 @@ null_ls.setup({
 		diagnostics.eslint,
 
 		-- formatting
-		formatting.prettier.with({ extra_args = { "--single-quote", "--jsx-single-quote" } }),
+		formatting.dart_format,
 		formatting.stylua,
+		formatting.prettier.with({ extra_args = { "--single-quote", "--jsx-single-quote" } }),
 	},
 	-- you can reuse a shared lspconfig on_attach callback here
 	on_attach = function(client, bufnr)
@@ -33,7 +34,7 @@ null_ls.setup({
 				group = augroup,
 				buffer = bufnr,
 				callback = function()
-					vim.lsp.buf.format({ async=false, bufnr = bufnr })
+					vim.lsp.buf.format({ async = false, bufnr = bufnr })
 				end,
 			})
 		end

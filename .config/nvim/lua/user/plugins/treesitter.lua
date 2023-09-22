@@ -5,23 +5,23 @@ end
 
 configs.setup({
 	ensure_installed = {
-    "bash",
-    "css",
-    "dart",
-    "html",
+		"bash",
+		"css",
+		--[[ "dart", ]]
+		"html",
 		"javascript",
-    "json",
+		"json",
 		"lua",
 		"python",
 		"regex",
-    "scss",
-    "tsx",
-    "typescript",
-    "yaml",
+		"scss",
+		"tsx",
+		"typescript",
+		"yaml",
 	},
 	sync_install = false,
-  auto_install = true,
-	ignore_install = { "" }, -- List of parsers to ignore installing
+	auto_install = true,
+	ignore_install = { "dart" }, -- List of parsers to ignore installing
 	autopairs = { enable = true },
 	highlight = {
 		enable = true, -- false will disable the whole extension

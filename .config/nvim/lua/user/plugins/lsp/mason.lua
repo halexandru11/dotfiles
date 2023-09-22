@@ -30,7 +30,13 @@ end
 
 local opts = {}
 
-for _, server in pairs(servers) do
+local all_servers = {}
+for _, server in ipairs(servers) do
+	table.insert(all_servers, server)
+end
+table.insert(all_servers, "dartls")
+
+for _, server in pairs(all_servers) do
 	opts = {
 		on_attach = require("user.plugins.lsp.handlers").on_attach,
 		capabilities = require("user.plugins.lsp.handlers").capabilities,
