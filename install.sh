@@ -28,5 +28,4 @@ fc-cache -f -v
 # Install packages
 sudo apt install -y \
   autojump \
-  cmatrix \
-  neovim ;
+  cmatrix;
