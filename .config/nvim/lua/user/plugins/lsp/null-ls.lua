@@ -17,16 +17,18 @@ null_ls.setup({
 	sources = {
 		-- code actions
 		code_actions.eslint,
+		code_actions.proselint,
 		code_actions.refactoring,
 
 		-- diagnostics
 		diagnostics.eslint,
-		diagnostics.mypy,
-		diagnostics.ruff,
+		diagnostics.flake8,
+		diagnostics.proselint,
 
 		-- formatting
 		formatting.black,
 		formatting.dart_format,
+		formatting.latexindent,
 		formatting.stylua,
 		formatting.prettier.with({ extra_args = { "--single-quote", "--jsx-single-quote" } }),
 	},
