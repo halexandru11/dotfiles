@@ -1,6 +1,7 @@
 #!/bin/sh
 alias ls='ls --color=auto'
 alias la='ls -a'
+alias ll='ls -lh'
 alias f='zi'
 alias zsh-update-plugins="find "$ZDOTDIR/plugins" -type d -exec test -e '{}/.git' ';' -print0 | xargs -I {} -0 git -C {} pull -q"
 
@@ -21,6 +22,7 @@ alias ga='git add .'
 alias gaa='git add --all'
 alias gc='git commit -m'
 alias gp='git push'
+alias gf='git fetch'
 alias gpl='git pull'
 alias gco='git checkout'
 alias gm='git merge'
