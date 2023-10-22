@@ -1,0 +1,34 @@
+\documentclass{report}
+
+\input{preamble}
+\input{macros}
+\input{letterfonts}
+
+\begin{document}
+
+\pdfbookmark[section]{\contentsname}{toc}
+\tableofcontents
+\pagebreak
+
+\chapter{}
+\section{}
+\dfn{Limit of Sequence in $\bs{\bbR}$}{Let $\{s_n\}$ be a sequence in $\bbR$. We say $$\lim_{n\to\infty}s_n=s$$ where $s\in\bbR$ if $\forall$ real numbers $\eps>0$ $\exists$ natural number $N$ such that for $n>N$ $$s-\eps<s_n<s+\eps\text{ i.e. }|s-s_n|<\eps$$}
+\qs{}{Is the set ${x-}$axis${\setminus\{\text{Origin}\}}$ a closed set}
+\sol We have to take its complement and check whether that set is a open set i.e. if it is a union of open balls
+\nt{We will do topology in Normed Linear Space  (Mainly $\bbR^n$ and occasionally $\bbC^n$)using the language of Metric Space}
+\clm{Topology}{}{Topology is cool}
+\ex{Open Set and Close Set}{
+	\begin{tabular}{rl}
+		Open Set:   & $\bullet$ $\phi$                                              \\
+		            & $\bullet$ $\bigcup\limits_{x\in X}B_r(x)$ (Any $r>0$ will do) \\[3mm]
+		            & $\bullet$ $B_r(x)$ is open                                    \\
+		Closed Set: & $\bullet$ $X,\ \phi$                                          \\
+		            & $\bullet$ $\overline{B_r(x)}$                                 \\
+		            & $x-$axis $\cup$ $y-$axis
+	\end{tabular}}
+\thm{}{If $x\in$ open set $V$ then $\exists$ $\delta>0$ such that $B_{\delta}(x)\subset V$}
+\cor{}{By the result of the proof, we can then show\textellipsis}
+\mlenma{}{Suppose $\vec{v_1}, \dots, \vec{v_n} \in \RR[n]$ is subspace of $\RR^n$.}
+\mprop{}{$1 + 1 = 2$.}
+
+\end{document}

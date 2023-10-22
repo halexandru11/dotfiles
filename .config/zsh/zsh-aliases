@@ -60,3 +60,11 @@ jn() {
   j "$@" && n
 }
 
+# copy ~/.dotfiles/latex to current directory or to specified directory
+ltx() {
+  if [ $# -eq 0 ]; then
+    cp -r ~/.dotfiles/latex .
+  else
+    cp -r ~/.dotfiles/latex "$@"
+  fi
+}
