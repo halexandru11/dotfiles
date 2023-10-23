@@ -11,7 +11,7 @@ end
 
 local group = vim.api.nvim_create_augroup("KnapReload", { clear = true })
 vim.api.nvim_create_autocmd("BufWritePost", {
-	pattern = "*.tex",
+	pattern = "main.tex",
 	group = group,
 	callback = function()
 		swallow_output(function()
