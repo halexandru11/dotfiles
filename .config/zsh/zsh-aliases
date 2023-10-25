@@ -54,7 +54,14 @@ alias list_systemctl="systemctl list-unit-files --state=enabled"
 # transform `nvim .` into `n` & `nvim <file>` into `n <file>`
 n() {
   if [ $# -eq 0 ]; then
-    nvim .
+    # check if there is a main.tex file
+    if [ -f "main.tex" ]; then
+      # if so, open the main.tex file
+      nvim "main.tex"
+    else
+      # otherwise, open the current directory
+      nvim .
+    fi
   else
     nvim "$@"
   fi
@@ -68,7 +75,7 @@ jn() {
 # copy ~/.dotfiles/latex to current directory or to specified directory
 ltx() {
   if [ $# -eq 0 ]; then
-    cp -r ~/.dotfiles/latex .
+    echo "Please specify a directory to copy to." >&2 && return 1
   else
     cp -r ~/.dotfiles/latex "$@"
   fi
