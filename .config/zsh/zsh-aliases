@@ -63,7 +63,15 @@ n() {
       nvim .
     fi
   else
-    nvim "$@"
+    # check if we try to open a directory
+    # if so, check if there is a main.tex file
+    if [ -d "$1" ] && [ -f "$1/main.tex" ]; then
+      # if so, open the main.tex file
+      nvim "$1/main.tex"
+    else
+      # otherwise, open the file
+      nvim "$@"
+    fi
   fi
 }
 
