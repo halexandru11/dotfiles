@@ -6,10 +6,11 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 setopt histignorealldups sharehistory
+setopt autocd
 
 # Keep 10000 lines of history within the shell and save it to ~/.zsh_history:
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=15000
+SAVEHIST=15000
 HISTFILE=~/.zsh_history
 
 # Bind Ctrl+Backspace to delete a word

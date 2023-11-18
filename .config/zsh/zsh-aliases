@@ -1,7 +1,8 @@
 #!/bin/sh
 alias ls='ls --color=auto'
-alias la='ls -a'
-alias ll='ls -lh'
+alias la='ls -A'
+alias ll='ls -lhG'
+alias l='ll'
 alias f='zi'
 alias zsh-update-plugins="find "$ZDOTDIR/plugins" -type d -exec test -e '{}/.git' ';' -print0 | xargs -I {} -0 git -C {} pull -q"
 
