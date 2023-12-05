@@ -88,7 +88,7 @@ return packer.startup(function(use)
 	use("windwp/nvim-ts-autotag") -- Auto close and auto rename html tag
 
 	-- Treesitter
-	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate", commit = "f2778bd1a28b74adf5b1aa51aa57da85adfa3d16" })
+	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
 
 	-- Git
 	use("lewis6991/gitsigns.nvim")
