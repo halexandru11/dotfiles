@@ -22,7 +22,8 @@ ZSH_HIGHLIGHT_STYLES[path]=none
 ZSH_HIGHLIGHT_STYLES[path_prefix]=none
 
 PATH="$PATH:/usr/bin/npm"
-PATH="$PATH:/home/halexandru11/programs/flutter/bin"
+PATH="$PATH":"$HOME/programs/flutter/bin"
+PATH="$PATH":"$HOME/.pub-cache/bin"
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
