@@ -12,6 +12,7 @@ sudo apt install git -y ;
 
 #Download Hermit Nerd Font Mono
 curl -fOL --create-dirs --output-dir .local/share/fonts "https://github.com/ryanoasis/nerd-fonts/raw/HEAD/patched-fonts/Hermit/{Bold\-Italic,Bold,Italic,Light\-Italic,Light,Regular}/HurmitNerdFont-{BoldItalic,Bold,Italic,LightItalic,Light,Regular}.otf" ;
+curl -fOL --create-dirs --output-dir .local/share/fonts "https://github.com/ryanoasis/nerd-fonts/raw/HEAD/patched-fonts/FiraMono/{Bold,Medium,Regular}/{FiraMonoNerdFont,FiraMonoNerdFontMono}-{Bold,Medium,Regular}.otf"
 
 $DOTFILES_DIR=~/.dotfiles
 rm ~/.zshrc ; ln -s -f $DOTFILES_DIR/.config/zsh/.zshrc ~/.zshrc ;
@@ -36,6 +37,11 @@ sudo apt install -y \
   nmp \
   nodejs \
   pkg-config \
+  rubber \
+  texlive-fonts-extra \
+  texlive-latex-recommended \
+  texlive-latex-extra \
+  texlive-latex-science \
   xclip;
 
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k ;
