@@ -23,6 +23,7 @@ null_ls.setup({
 		-- diagnostics
 		diagnostics.eslint,
 		diagnostics.flake8,
+		diagnostics.luacheck,
 		diagnostics.proselint,
 
 		-- formatting

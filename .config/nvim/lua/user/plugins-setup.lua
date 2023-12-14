@@ -43,8 +43,9 @@ return packer.startup(function(use)
 	use("numToStr/Comment.nvim")
 
 	-- color theme
-	use("~/personal/tropical")
+	-- use("~/personal/tropical")
 	use("folke/tokyonight.nvim")
+	use({ "catppuccin/nvim", as = "catppuccino" })
 
 	-- statusline
 	use("nvim-lualine/lualine.nvim")
@@ -89,6 +90,8 @@ return packer.startup(function(use)
 
 	-- Treesitter
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
+	use({ "nvim-treesitter/playground" })
+	-- use({ "~/dev/open-source/nvim-treesitter", run = ":TSUpdate" })
 
 	-- Git
 	use("lewis6991/gitsigns.nvim")
