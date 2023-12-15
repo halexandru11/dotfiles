@@ -34,7 +34,7 @@ local config = {
 		lualine_x = { "progress" },
 		lualine_y = { { get_directory } },
 		lualine_z = {
-			{ "location", separator = { right = "" }, left_padding = 2 },
+			{ "location", separator = { left = "", right = "" } },
 		},
 	},
 	inactive_sections = {
