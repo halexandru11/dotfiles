@@ -32,8 +32,10 @@ sudo apt install -y \
   clang \
   cmatrix \
   gnome-shell-extension-manager \
+  hollywood \
   libfuse2 \
   libgtk-3-dev \
+  neofetch \
   nmp \
   nodejs \
   pkg-config \
