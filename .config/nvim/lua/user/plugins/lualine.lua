@@ -13,7 +13,7 @@ end
 local config = {
 	options = {
 		component_separators = "|",
-		section_separators = { left = "", right = "" },
+		section_separators = { left = "", right = "" },
 	},
 	sections = {
 		lualine_a = {
@@ -21,20 +21,29 @@ local config = {
 		},
 		lualine_b = {
 			"filename",
-			"branch",
+			{ "branch", color = { fg = "", gui = "bold" } },
 			{
 				"diagnostics",
-				-- sources = { "nvim_diagnostic" },
 				symbols = { error = " ", warn = " ", info = " ", hint = "󰌵 " },
 			},
 		},
 		lualine_c = {
 			"diff",
 		},
-		lualine_x = { "progress" },
-		lualine_y = { { get_directory } },
+		lualine_x = {
+			"fileformat",
+			"filetype",
+		},
+		lualine_y = {
+			"progress",
+			{
+				"location",
+				padding = { left = 0, right = 1 },
+				color = { fg = "", gui = "bold" },
+			},
+		},
 		lualine_z = {
-			{ "location", separator = { left = "", right = "" } },
+			{ get_directory, icon = "󰉋", separator = { left = "", right = "" } },
 		},
 	},
 	inactive_sections = {
