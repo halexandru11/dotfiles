@@ -22,7 +22,7 @@ null_ls.setup({
 
 		-- diagnostics
 		diagnostics.eslint,
-		diagnostics.flake8,
+		diagnostics.flake8.with({ extra_args = { "--max-line-length", "80" } }),
 		diagnostics.luacheck,
 		diagnostics.proselint,
 
