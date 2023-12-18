@@ -51,7 +51,7 @@ return packer.startup(function(use)
 	use("nvim-lualine/lualine.nvim")
 
 	-- harpoon
-	use("ThePrimeagen/harpoon") -- quick navigation between files
+	use({ "ThePrimeagen/harpoon", branch = "harpoon2" }) -- quick navigation between files
 
 	use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
 	use("szw/vim-maximizer") -- maximize split window

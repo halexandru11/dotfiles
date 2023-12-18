@@ -1,9 +1,18 @@
 local harpoon = require("harpoon")
 
-harpoon:setup()
+harpoon:setup({
+	settings = {
+		save_on_toggle = true,
+		sync_on_ui_close = true,
+	},
+})
 
-vim.keymap.set("n", "<leader>a", function() harpoon:list():append() end)
-vim.keymap.set("n", "<C-f>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+vim.keymap.set("n", "<leader>a", function()
+	harpoon:list():append()
+end)
+vim.keymap.set("n", "<C-f>", function()
+	harpoon.ui:toggle_quick_menu(harpoon:list(), { border = "rounded", title_pos = "center" })
+end)
 
 vim.keymap.set("n", "<C-b>", function()
 	harpoon:list():select(1)
