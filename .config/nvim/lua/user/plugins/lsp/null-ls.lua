@@ -22,12 +22,13 @@ null_ls.setup({
 
 		-- diagnostics
 		diagnostics.eslint,
-		diagnostics.flake8.with({ extra_args = { "--max-line-length", "80" } }),
+		diagnostics.flake8.with({ extra_args = { "--max-line-length", "80", "--ignore=E501,W503" } }),
+		diagnostics.ruff,
 		diagnostics.luacheck,
 		diagnostics.proselint,
 
 		-- formatting
-		formatting.black,
+		formatting.black.with({ extra_args = { "--line-length", "80" } }),
 		formatting.dart_format,
 		formatting.latexindent,
 		formatting.stylua,
