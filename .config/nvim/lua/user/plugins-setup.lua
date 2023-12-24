@@ -46,6 +46,7 @@ return packer.startup(function(use)
 	-- use("~/personal/tropical")
 	use("folke/tokyonight.nvim")
 	use({ "catppuccin/nvim", as = "catppuccino" })
+	use("rose-pine/neovim")
 
 	-- statusline
 	use("nvim-lualine/lualine.nvim")
@@ -75,7 +76,7 @@ return packer.startup(function(use)
 	use("neovim/nvim-lspconfig") -- enable LSP
 	use("williamboman/mason.nvim") -- simple to use language server installer
 	use("williamboman/mason-lspconfig.nvim") -- simple to use language server installer
-	use("jose-elias-alvarez/null-ls.nvim") -- LSP diagnostics and code actions
+	use("nvimtools/none-ls.nvim") -- LSP diagnostics and code actions
 	-- use({ "lervag/vimtex", opt = true, cmd = { "VimtexCompile", "VimtexStopCompile", "Start" } }) -- latex support
 	use("frabjous/knap")
 
