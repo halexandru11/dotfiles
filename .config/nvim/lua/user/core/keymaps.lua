@@ -10,12 +10,15 @@ local opts = { noremap = true, silent = true }
 ---------------------
 
 -- use jk to exit insert mode
-keymap.set("i", "jk", "<Esc>", opts)
-keymap.set("i", "jl", "<Esc>", opts)
-keymap.set("i", "kl", "<Esc>", opts)
-keymap.set("i", "JK", "<Esc>", opts)
-keymap.set("i", "JL", "<Esc>", opts)
-keymap.set("i", "KL", "<Esc>", opts)
+-- keymap.set("i", "jk", "<Esc>", opts)
+-- keymap.set("i", "jl", "<Esc>", opts)
+-- keymap.set("i", "kl", "<Esc>", opts)
+-- keymap.set("i", "JK", "<Esc>", opts)
+-- keymap.set("i", "JL", "<Esc>", opts)
+-- keymap.set("i", "KL", "<Esc>", opts)
+
+-- make Ctrl-C behave like Esc
+keymap.set({ "i", "v" }, "<C-C>", "<Esc>", opts)
 
 -- move lines up and down
 keymap.set("v", "J", ":m '>+1<CR>gv=gv", opts) -- move line up
