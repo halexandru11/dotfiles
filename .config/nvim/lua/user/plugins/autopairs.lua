@@ -4,6 +4,14 @@ if not autopairs_status then
 	return
 end
 
+local autotag_status, autotag = pcall(require, "nvim-ts-autotag")
+if not autotag_status then
+	return
+end
+
+-- configure autotag
+autotag.setup()
+
 -- configure autopairs
 autopairs.setup({
 	check_ts = true,
