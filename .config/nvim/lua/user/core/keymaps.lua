@@ -17,8 +17,11 @@ local opts = { noremap = true, silent = true }
 -- keymap.set("i", "JL", "<Esc>", opts)
 -- keymap.set("i", "KL", "<Esc>", opts)
 
--- make Ctrl-C behave like Esc
-keymap.set({ "i", "v" }, "<C-C>", "<Esc>", opts)
+-- make jk behave like Esc
+keymap.set({ "i", "v" }, "jk", "<Esc>", opts)
+keymap.set({ "i", "v" }, "jK", "<Esc>", opts)
+keymap.set({ "i", "v" }, "Jk", "<Esc>", opts)
+keymap.set({ "i", "v" }, "JK", "<Esc>", opts)
 
 -- move lines up and down
 keymap.set("v", "J", ":m '>+1<CR>gv=gv", opts) -- move line up
