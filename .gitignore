@@ -4,3 +4,5 @@
 .config/zsh/plugins/*
 
 .local/share/fonts/*
+
+indent.log
