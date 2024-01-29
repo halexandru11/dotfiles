@@ -1,7 +1,4 @@
-local M = {}
-
--- TODO: backfill this to template
-M.setup = function()
+local function setup()
 	local signs = {
 		{ name = "DiagnosticSignError", text = "" },
 		{ name = "DiagnosticSignWarn", text = "" },
@@ -34,11 +31,9 @@ M.setup = function()
 	}
 
 	vim.diagnostic.config(config)
-
 	vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
 		border = "rounded",
 	})
-
 	vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
 		border = "rounded",
 	})
@@ -62,7 +57,7 @@ local function lsp_keymaps(bufnr)
 	vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
 end
 
-M.on_attach = function(client, bufnr)
+local function on_attach(client, bufnr)
 	if client.name == "tsserver" or client.name == "lua_ls" or client.name == "jsonls" then
 		client.server_capabilities.documentFormattingProvider = false
 		client.server_capabilities.documentRangeFormattingProvider = false
@@ -75,11 +70,72 @@ M.on_attach = function(client, bufnr)
 	lsp_keymaps(bufnr)
 end
 
-local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
-if status_ok then
-	M.capabilities = cmp_nvim_lsp.default_capabilities()
-else
-	print("Could not load cmp_nvim_lsp, therefor could not load capabilities")
-end
+return {
+	"neovim/nvim-lspconfig",
+	dependencies = {
+		"williamboman/mason.nvim",
+		"williamboman/mason-lspconfig.nvim",
+		"hrsh7th/cmp-nvim-lsp",
+	},
+	config = function()
+		local servers = {
+			"lua_ls",
+			"jsonls",
+			"pyright",
+			"texlab",
+			"tsserver",
+		}
 
-return M
+		local settings = {
+			ui = {
+				border = "none",
+				icons = {
+					package_installed = "◍",
+					package_pending = "◍",
+					package_uninstalled = "◍",
+				},
+			},
+			log_level = vim.log.levels.INFO,
+			max_concurrent_installers = 4,
+		}
+
+		require("mason").setup(settings)
+		require("mason-lspconfig").setup({
+			ensure_installed = servers,
+			automatic_installation = true,
+		})
+
+		local lspconfig = require("lspconfig")
+
+		local all_servers = {}
+		for _, server in ipairs(servers) do
+			table.insert(all_servers, server)
+		end
+		table.insert(all_servers, "dartls")
+
+		local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
+		local capabilities = nil
+		if status_ok then
+			capabilities = cmp_nvim_lsp.default_capabilities()
+		else
+			print("Could not load cmp_nvim_lsp, therefor could not load capabilities")
+		end
+
+		for _, server in pairs(all_servers) do
+			local opts = {
+				on_attach = on_attach,
+				capabilities = capabilities,
+			}
+
+			server = vim.split(server, "@")[1]
+
+			local require_ok, conf_opts = pcall(require, "lsp_servers." .. server)
+			if require_ok then
+				opts = vim.tbl_deep_extend("force", conf_opts, opts)
+			end
+
+			lspconfig[server].setup(opts)
+		end
+		setup()
+	end,
+}
