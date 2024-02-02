@@ -118,7 +118,7 @@ return {
 		if status_ok then
 			capabilities = cmp_nvim_lsp.default_capabilities()
 		else
-			print("Could not load cmp_nvim_lsp, therefor could not load capabilities")
+			print("Could not load cmp_nvim_lsp, therefore could not load capabilities")
 		end
 
 		for _, server in pairs(all_servers) do
