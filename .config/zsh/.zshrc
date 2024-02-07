@@ -67,9 +67,9 @@ zle -N down-line-or-beginning-search
 autoload -Uz colors && colors
 
 ## Exports
-export ZDOTDIR=$HOME/.config/zsh
-export ANDROID_HOME=$HOME/Android/Sdk
-export CHROME_EXECUTABLE="/usr/bin/chromium-browser"
+# export ZDOTDIR=$HOME/.config/zsh
+# export ANDROID_HOME=$HOME/Android/Sdk
+# export CHROME_EXECUTABLE="/usr/bin/chromium-browser"
 
 ## Useful functions
 source $ZDOTDIR/zsh-functions
