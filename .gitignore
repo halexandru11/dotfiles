@@ -5,4 +5,4 @@
 
 .local/share/fonts/*
 
-indent.log
+*.log
