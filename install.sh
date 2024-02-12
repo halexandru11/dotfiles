@@ -17,6 +17,9 @@ curl -fOL --create-dirs --output-dir ~/.local/share/fonts "https://github.com/ry
 curl -fOL --create-dirs --output-dir ~/.local/share/fonts "https://github.com/ryanoasis/nerd-fonts/raw/HEAD/patched-fonts/FiraMono/{Bold,Medium,Regular}/{FiraMonoNerdFont,FiraMonoNerdFontMono}-{Bold,Medium,Regular}.otf"
 fc-cache -f -v ;
 
+# Install nvm
+curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash ;
+
 # Install packages
 sudo apt install -y \
   autojump \
