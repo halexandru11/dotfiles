@@ -17,5 +17,5 @@ return {
 			require("Comment").setup()
 		end,
 	},
-	--	-- use({ "lervag/vimtex", opt = true, cmd = { "VimtexCompile", "VimtexStopCompile", "Start" } }) -- latex support
+	-- use({ "lervag/vimtex", opt = true, cmd = { "VimtexCompile", "VimtexStopCompile", "Start" } }) -- latex support
 }
