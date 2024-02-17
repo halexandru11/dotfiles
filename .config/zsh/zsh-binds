@@ -1,0 +1,2 @@
+bindkey -M vicmd '^O' clear-screen
+bindkey -M viins '^O' clear-screen
