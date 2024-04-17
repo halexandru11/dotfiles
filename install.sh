@@ -30,6 +30,7 @@ sudo apt install -y \
   hollywood \
   libfuse2 \
   libgtk-3-dev \
+  tldr \
   neofetch \
   nmp \
   nodejs \
