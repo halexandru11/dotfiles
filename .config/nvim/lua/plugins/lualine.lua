@@ -1,15 +1,38 @@
 local function get_file_path()
+	-- Get the absolute path of the current file
 	local current_file_path = vim.fn.expand("%:p")
+
+	-- Get the current working directory
 	local cwd = vim.fn.getcwd()
 
 	-- Calculate the relative path
 	local relative_path = vim.fn.fnamemodify(current_file_path, ":.")
+
+	-- Ensure cwd ends with a slash for consistency
 	if not vim.endswith(cwd, "/") then
 		cwd = cwd .. "/"
 	end
+
+	-- Substitute the cwd in the relative path with an empty string
 	relative_path = vim.fn.substitute(relative_path, "^" .. vim.fn.escape(cwd, "\\/") .. "", "", "")
 
-	return "./" .. relative_path
+	-- Split the path into directory components
+	local directories = {}
+	for directory in relative_path:gmatch("[^/]+") do
+		table.insert(directories, directory)
+	end
+
+	-- Limit the directories to at most 3 levels
+	if #directories > 3 then
+		relative_path = "... > " .. table.concat(directories, " > ", #directories - 2, #directories)
+	elseif #directories > 0 then
+		relative_path = table.concat(directories, " > ")
+	else
+		relative_path = "."
+	end
+
+	-- Return the relative path
+	return relative_path
 end
 
 return {
