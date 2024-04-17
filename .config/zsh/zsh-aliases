@@ -11,6 +11,14 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 
+# tmux aliases
+alias t='tmux'
+alias ta='tmux attach -t'
+alias td='tmux detach'
+alias tk='tmux kill-session -t'
+alias tl='tmux list-sessions'
+alias tn='tmux new -s'
+
 # get fastest mirrors
 alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
 alias mirrord="sudo reflector --latest 50 --number 20 --sort delay --save /etc/pacman.d/mirrorlist"
