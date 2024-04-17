@@ -72,7 +72,7 @@ autoload -Uz colors && colors
 # export CHROME_EXECUTABLE="/usr/bin/chromium-browser"
 
 ## Useful functions
-source $ZDOTDIR/zsh-functions
+source $ZDOTDIR/zsh-functions/plugin
 
 ## Normal files to add
 zsh_add_file "zsh-exports"
