@@ -7,4 +7,11 @@ return {
 			},
 		},
 	},
+	init_options = {
+		closingLabels = true,
+		flutterOutline = true,
+		onlyAnalyzeProjectsWithOpenFiles = true,
+		outline = true,
+		suggestFromUnimportedLibraries = true,
+	},
 }

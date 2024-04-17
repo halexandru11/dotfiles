@@ -3,6 +3,7 @@ return {
 	"christoomey/vim-tmux-navigator",
 	"szw/vim-maximizer",
 	"tpope/vim-surround",
+	"tpope/vim-repeat",
 	{
 		"github/copilot.vim",
 		config = function()

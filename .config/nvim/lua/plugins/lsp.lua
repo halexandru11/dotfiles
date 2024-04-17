@@ -79,9 +79,11 @@ return {
 	},
 	config = function()
 		local servers = {
+			"clangd",
 			"lua_ls",
 			"jsonls",
 			"pyright",
+			"tailwindcss",
 			"texlab",
 			"tsserver",
 		}
@@ -131,7 +133,7 @@ return {
 
 			local require_ok, conf_opts = pcall(require, "lsp_servers." .. server)
 			if require_ok then
-				opts = vim.tbl_deep_extend("force", conf_opts, opts)
+				opts = vim.tbl_deep_extend("force", {}, opts, conf_opts)
 			end
 
 			lspconfig[server].setup(opts)

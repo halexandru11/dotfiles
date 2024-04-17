@@ -25,7 +25,7 @@ opt.cursorline = true -- highlight the current cursor line
 -- turn on termguicolors for nightfly colorscheme to work
 -- (have to use iterm2 or any other true color terminal)
 opt.termguicolors = true
-opt.background = "dark" -- colorschemes that can be light or dark will be made dark
+-- opt.background = "dark" -- colorschemes that can be light or dark will be made dark
 opt.signcolumn = "yes" -- show sign column so that text doesn't shift
 opt.scrolloff = 4 -- start scrolling when we are 4 lines away from margins
 
@@ -40,8 +40,8 @@ opt.splitright = true -- split vertical window to the right
 opt.splitbelow = true -- split horizontal window to the bottom
 
 -- opt.iskeyword:append("-")  -- consider string-string as a whole word
-vim.g.netrw_browse_split = 0
-vim.g.netrw_banner = 0
-vim.g.netrw_winsize = 25
-vim.g.netrw_list_hide = "^..$,^...$"
+-- vim.g.netrw_browse_split = 0
+-- vim.g.netrw_banner = 0
+-- vim.g.netrw_winsize = 25
+vim.g.netrw_list_hide = "^\\./$,^\\.\\./$"
 vim.g.netrw_hide = 1
