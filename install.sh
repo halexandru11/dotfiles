@@ -23,9 +23,12 @@ curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash ;
 # Install packages
 sudo apt install -y \
   autojump \
+  bat \
   build-essential \
   clang \
   cmatrix \
+  fzf \
+  git-delta \
   gnome-shell-extension-manager \
   hollywood \
   libfuse2 \
@@ -35,6 +38,7 @@ sudo apt install -y \
   nmp \
   nodejs \
   pkg-config \
+  ripgrep \
   rubber \
   stow \
   texlive-fonts-extra \
