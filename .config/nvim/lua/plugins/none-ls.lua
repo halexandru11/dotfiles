@@ -34,6 +34,7 @@ return {
 				-- formatting.latexindent,
 				formatting.stylua,
 				formatting.prettier.with({ extra_args = { "--single-quote", "--jsx-single-quote" } }),
+				-- formatting.rustfmt,
 			},
 			-- you can reuse a shared lspconfig on_attach callback here
 			on_attach = function(client, bufnr)

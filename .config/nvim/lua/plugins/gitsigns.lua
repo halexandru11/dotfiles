@@ -6,6 +6,7 @@ return {
 			"sindrets/diffview.nvim",
 			"nvim-telescope/telescope.nvim",
 		},
+		tag = "v0.0.1",
 		config = function()
 			local neogit = require("neogit")
 			neogit.setup({

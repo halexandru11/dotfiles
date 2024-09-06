@@ -9,29 +9,36 @@ local opts = { noremap = true, silent = true }
 -- General keymaps
 ---------------------
 
--- use jk to exit insert mode
--- keymap.set("i", "jk", "<Esc>", opts)
--- keymap.set("i", "jl", "<Esc>", opts)
--- keymap.set("i", "kl", "<Esc>", opts)
--- keymap.set("i", "JK", "<Esc>", opts)
--- keymap.set("i", "JL", "<Esc>", opts)
--- keymap.set("i", "KL", "<Esc>", opts)
+-- remap navigation keys for colemak layout
+keymap.set("n", "n", "j", opts)
+keymap.set("n", "N", "J", opts)
+keymap.set("n", "e", "k", opts)
+keymap.set("n", "E", "K", opts)
+
+keymap.set("n", "j", "e", opts)
+keymap.set("n", "J", "E", opts)
+keymap.set("n", "k", "n", opts)
+keymap.set("n", "K", "N", opts)
 
 -- make jk behave like Esc
-keymap.set({ "i" }, "jk", "<Esc>", opts)
-keymap.set({ "i" }, "jK", "<Esc>", opts)
-keymap.set({ "i" }, "Jk", "<Esc>", opts)
-keymap.set({ "i" }, "JK", "<Esc>", opts)
+keymap.set({ "i" }, "ne", "<Esc>", opts)
+keymap.set({ "i" }, "nE", "<Esc>", opts)
+keymap.set({ "i" }, "Ne", "<Esc>", opts)
+keymap.set({ "i" }, "NE", "<Esc>", opts)
 
 -- move lines up and down
 keymap.set("v", "J", ":m '>+1<CR>gv=gv", opts) -- move line up
 keymap.set("v", "K", ":m '<-2<CR>gv=gv", opts) -- move line down
 keymap.set("v", "p", '"_dP', opts) -- paste without yanking
 
+-- move trough quickfix list
+keymap.set({ "i", "n", "v" }, "<C-n>", "<cmd>cnext<CR>", opts)
+keymap.set({ "i", "n", "v" }, "<C-p>", "<cmd>cprev<CR>", {})
+
 keymap.set("n", "<C-d>", "<c-d>zz", opts) -- move down half page
 keymap.set("n", "<C-u>", "<c-u>zz", opts) -- move up half page
-keymap.set("n", "n", "nzzzv", opts) -- keep cursor centered when searching
-keymap.set("n", "N", "Nzzzv", opts) -- keep cursor centered when searching
+keymap.set("n", "k", "nzzzv", opts) -- keep cursor centered when searching
+keymap.set("n", "K", "Nzzzv", opts) -- keep cursor centered when searching
 
 keymap.set("n", "<leader>r", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>") -- replace word under cursor
 keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>") -- make file executable
