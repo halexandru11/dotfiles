@@ -9,22 +9,9 @@ local opts = { noremap = true, silent = true }
 -- General keymaps
 ---------------------
 
--- remap navigation keys for colemak layout
-keymap.set("n", "n", "j", opts)
-keymap.set("n", "N", "J", opts)
-keymap.set("n", "e", "k", opts)
-keymap.set("n", "E", "K", opts)
-
-keymap.set("n", "j", "e", opts)
-keymap.set("n", "J", "E", opts)
-keymap.set("n", "k", "n", opts)
-keymap.set("n", "K", "N", opts)
-
 -- make jk behave like Esc
-keymap.set({ "i" }, "ne", "<Esc>", opts)
-keymap.set({ "i" }, "nE", "<Esc>", opts)
-keymap.set({ "i" }, "Ne", "<Esc>", opts)
-keymap.set({ "i" }, "NE", "<Esc>", opts)
+keymap.set({ "i" }, "jk", "<Esc>", opts)
+keymap.set({ "i" }, "JK", "<Esc>", opts)
 
 -- move lines up and down
 keymap.set("v", "J", ":m '>+1<CR>gv=gv", opts) -- move line up
@@ -37,11 +24,10 @@ keymap.set({ "i", "n", "v" }, "<C-p>", "<cmd>cprev<CR>", {})
 
 keymap.set("n", "<C-d>", "<c-d>zz", opts) -- move down half page
 keymap.set("n", "<C-u>", "<c-u>zz", opts) -- move up half page
-keymap.set("n", "k", "nzzzv", opts) -- keep cursor centered when searching
-keymap.set("n", "K", "Nzzzv", opts) -- keep cursor centered when searching
+keymap.set("n", "n", "nzzzv", opts) -- keep cursor centered when searching
+keymap.set("n", "N", "Nzzzv", opts) -- keep cursor centered when searching
 
 keymap.set("n", "<leader>r", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>") -- replace word under cursor
-keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>") -- make file executable
 
 -- clear search highlights
 keymap.set("n", "<leader>nh", ":noh<CR>", opts)

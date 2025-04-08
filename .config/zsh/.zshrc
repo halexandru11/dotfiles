@@ -25,6 +25,7 @@ PATH="$PATH:/usr/bin/npm"
 PATH="$PATH":"$HOME/programs/flutter/bin"
 PATH="$PATH":"$HOME/.pub-cache/bin"
 PATH="$PATH":"$HOME/.local/share/nvim/mason/bin"
+PATH="$PATH:/usr/local/go/bin"
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
@@ -96,3 +97,11 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 # we need this to make sure that autojump works
 . /usr/share/autojump/autojump.sh
+
+# pnpm
+export PNPM_HOME="/home/halexandru11/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

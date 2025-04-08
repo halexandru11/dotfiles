@@ -5,13 +5,6 @@ return {
 	"tpope/vim-surround",
 	"tpope/vim-repeat",
 	{
-		"github/copilot.vim",
-		config = function()
-			vim.cmd([[imap <silent><script><expr> <C-y> copilot#Accept("\<CR>")]])
-			vim.cmd([[let g:copilot_no_tap_map = v:true]])
-		end,
-	},
-	{
 		"numToStr/Comment.nvim",
 		name = "Comment",
 		config = function()
