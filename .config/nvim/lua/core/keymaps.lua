@@ -9,9 +9,8 @@ local opts = { noremap = true, silent = true }
 -- General keymaps
 ---------------------
 
--- make jk behave like Esc
-keymap.set({ "i" }, "jk", "<Esc>", opts)
-keymap.set({ "i" }, "JK", "<Esc>", opts)
+-- make Ctrl-C behave like Esc
+keymap.set({ "i" }, "<C-c>", "<Esc>", opts)
 
 -- move lines up and down
 keymap.set("v", "J", ":m '>+1<CR>gv=gv", opts) -- move line up
@@ -19,8 +18,8 @@ keymap.set("v", "K", ":m '<-2<CR>gv=gv", opts) -- move line down
 keymap.set("v", "p", '"_dP', opts) -- paste without yanking
 
 -- move trough quickfix list
-keymap.set({ "i", "n", "v" }, "<C-n>", "<cmd>cnext<CR>", opts)
-keymap.set({ "i", "n", "v" }, "<C-p>", "<cmd>cprev<CR>", {})
+keymap.set({ "i", "n", "v" }, "<C-n>", "<cmd>cnext<CR>zz", opts)
+keymap.set({ "i", "n", "v" }, "<C-p>", "<cmd>cprev<CR>zz", {})
 
 keymap.set("n", "<C-d>", "<c-d>zz", opts) -- move down half page
 keymap.set("n", "<C-u>", "<c-u>zz", opts) -- move up half page

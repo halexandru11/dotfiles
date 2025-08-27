@@ -1,7 +1,8 @@
 [window]
 # opacity = 0.74
-# opacity = 0.8
-opacity = 0.88
+opacity = 0.8
+# opacity = 0.84
+# opacity = 0.88
 # opacity = 0.93
 decorations = "None"
 # startup_mode = "Maximized"
