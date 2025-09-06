@@ -1,0 +1,6 @@
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+export ANDROID_HOME=$HOME/Android/Sdk
+export CHROME_EXECUTABLE="/usr/bin/chromium-browser"
+. "$HOME/.cargo/env"
