@@ -1,16 +1,25 @@
-require("core")
+require('core')
 
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+print 'We are starting...'
+
+local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
-	vim.fn.system({
-		"git",
-		"clone",
-		"--filter=blob:none",
-		"https://github.com/folke/lazy.nvim.git",
-		"--branch=stable", -- latest stable release
+	local lazyrepo = 'https://github.com/folke/lazy.nvim.git'
+	local out = vim.fn.system({
+		'git',
+		'clone',
+		'--filter=blob:none',
+		'--branch=stable', -- latest stable release
+		lazyrepo,
 		lazypath,
 	})
+	if vim.v.shell_error ~= 0 then
+		error('Error cloning lazi.nvim:\n' .. out)
+	end
 end
-vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup("plugins")
+---@type vim.Option
+local rtp = vim.opt.rtp
+rtp:prepend(lazypath)
+
+require('lazy').setup('plugins')

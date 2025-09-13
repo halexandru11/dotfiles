@@ -11,12 +11,7 @@ set -euo pipefail
 #   0 = neovim setup successful
 #   1 = could not determine the distro
 setup_neovim() {
-	local accept=${1:-}
-
-	if command -v nvim >/dev/null 2>&1; then
-		printf 'Congratulations! Neovim is already installed on your system.\n'
-		return 0
-	fi
+	local accept=${1:-''}
 
 	update_system "${accept}"
 
@@ -25,16 +20,18 @@ setup_neovim() {
 		return 1
 	fi
 
+	local packages=(neovim xclip) 
+
 	# TODO: Install Neovim from source. Debian Neovim always has an older version
-	printf 'Installing neovim...\n'
+	printf 'Installing missing packages for neovim...\n'
 	case "$distro" in
 		fedora)        
-			printf 'Running: sudo dnf install neovim %s\n' "${accept}"
-			sudo dnf install neovim "${accept}"
+			echo "Running: sudo dnf install ${packages[@]} ${accept}"
+			sudo dnf install "${packages[@]} ${accept}"
 			;;
 		debian|ubuntu) 
-			printf 'Running: sudo apt install neovim %s\n' "${accept}"
-			sudo apt install neovim "${accept}"
+			echo "Running: sudo apt install ${packages[@]} ${accept}"
+			sudo apt install "${packages[@]} ${accept}"
 			;;
 		*)     
 			printf 'This script does not know how to install neovim on %s. Exiting...\n' "$distro" >&2;

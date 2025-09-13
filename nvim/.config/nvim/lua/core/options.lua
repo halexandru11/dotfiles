@@ -1,48 +1,58 @@
-local opt = vim.opt -- for conciseness
+-- set leader key to space
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
+vim.g.have_nerd_font = false
 
 -- line numbers
-opt.relativenumber = true -- show relative line numbers
-opt.number = true -- shows absolute line number on cursor line (when relative number is on)
+vim.o.number = true -- shows absolute line number on cursor line
+vim.o.relativenumber = true -- show relative line numbers
+vim.o.signcolumn = 'yes' -- Keep signcolumn on by default
+vim.o.cursorline = true -- Show which line your cursor is on
 
 -- tabs & indentation
-opt.tabstop = 2 -- 2 spaces for tabs (prettier default)
-opt.shiftwidth = 2 -- 2 spaces for indent width
-opt.expandtab = true -- expand tab to spaces
-opt.autoindent = true -- copy indent from current line when starting new one
+vim.o.tabstop = 2 -- 2 spaces for tabs (prettier default)
+vim.o.shiftwidth = 2 -- 2 spaces for indent width
+vim.o.expandtab = true -- expand tab to spaces
+vim.o.autoindent = true -- copy indent from current line when starting new one
 
--- line wrapping
-opt.wrap = false -- enable line wrapping
+-- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
+vim.o.ignorecase = true
+vim.o.smartcase = true
+vim.o.incsearch = true -- show search matches as you type
+vim.o.hlsearch = false -- highlight all matches on screen
+vim.o.inccommand = 'split' -- Preview substitutions live, as you type!
 
--- search settings
-opt.ignorecase = true -- ignore case when searching
-opt.smartcase = true -- if you include mixed case in your search, assumes you want case-sensitive
-opt.incsearch = true -- show search matches as you type
-opt.hlsearch = false -- highlight all matches on screen
--- opt.inccommand = "split" -- show live preview of :s command
+vim.o.breakindent = true -- Enable break indent
+vim.o.backspace = "indent,eol,start" -- allow backspace on indent, end of line or insert mode start position
 
--- cursor line
-opt.cursorline = true -- highlight the current cursor line
+vim.o.mouse = 'a' -- enable mouse mode
+vim.o.showmode = false -- Don't show the mode, since it's already in the status line
 
--- turn on termguicolors for nightfly colorscheme to work
--- (have to use iterm2 or any other true color terminal)
-opt.termguicolors = true
--- opt.background = "dark" -- colorschemes that can be light or dark will be made dark
-opt.signcolumn = "yes" -- show sign column so that text doesn't shift
-opt.scrolloff = 4 -- start scrolling when we are 4 lines away from margins
+vim.o.undofile = true -- Save undo history
+vim.o.updatetime = 250 -- Decrease update time
+vim.o.timeoutlen = 300 -- Decrease mapped sequence wait time
 
--- backspace
-opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or insert mode start position
+-- Configure how new splits should be opened
+vim.o.splitright = true
+vim.o.splitbelow = true
 
--- clipboard
--- opt.clipboard:append("unnamedplus")  -- use system clipboard as defauld register
+-- Sets how neovim will display certain whitespace characters in the editor.
+--  See `:help 'list'`
+--  and `:help 'listchars'`
+--
+--  Notice listchars is set using `vim.opt` instead of `vim.o`.
+--  It is very similar to `vim.o` but offers an interface for conveniently interacting with tables.
+--   See `:help lua-options`
+--   and `:help lua-options-guide`
+vim.o.list = true
+vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
--- slit windows
-opt.splitright = true -- split vertical window to the right
-opt.splitbelow = true -- split horizontal window to the bottom
+vim.o.wrap = false -- enable line wrapping
 
--- opt.iskeyword:append("-")  -- consider string-string as a whole word
--- vim.g.netrw_browse_split = 0
--- vim.g.netrw_banner = 0
--- vim.g.netrw_winsize = 25
+vim.o.scrolloff = 5 -- Minimal number of screen lines to keep above and below the cursor.
+
+vim.o.termguicolors = true -- turn on termguicolors for nightfly colorscheme to work
+
 vim.g.netrw_list_hide = "^\\./$,^\\.\\./$"
 vim.g.netrw_hide = 1
