@@ -2,7 +2,7 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-vim.g.have_nerd_font = false
+vim.g.have_nerd_font = true
 
 -- line numbers
 vim.o.number = true -- shows absolute line number on cursor line
@@ -38,13 +38,6 @@ vim.o.splitright = true
 vim.o.splitbelow = true
 
 -- Sets how neovim will display certain whitespace characters in the editor.
---  See `:help 'list'`
---  and `:help 'listchars'`
---
---  Notice listchars is set using `vim.opt` instead of `vim.o`.
---  It is very similar to `vim.o` but offers an interface for conveniently interacting with tables.
---   See `:help lua-options`
---   and `:help lua-options-guide`
 vim.o.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
@@ -54,5 +47,5 @@ vim.o.scrolloff = 5 -- Minimal number of screen lines to keep above and below th
 
 vim.o.termguicolors = true -- turn on termguicolors for nightfly colorscheme to work
 
-vim.g.netrw_list_hide = "^\\./$,^\\.\\./$"
-vim.g.netrw_hide = 1
+-- vim.g.netrw_list_hide = "^\\./$,^\\.\\./$"
+-- vim.g.netrw_hide = 1
