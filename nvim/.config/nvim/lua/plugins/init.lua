@@ -1,9 +1,9 @@
 return {
   "nvim-lua/plenary.nvim",
   "christoomey/vim-tmux-navigator",
-  "szw/vim-maximizer",
-  "tpope/vim-repeat",
   "lewis6991/gitsigns.nvim",
+  "tpope/vim-repeat",
+  "szw/vim-maximizer",
   { "xiyaowong/transparent.nvim", config = function() end },
   {
 		"catppuccin/nvim",
