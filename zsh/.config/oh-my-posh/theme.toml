@@ -1,0 +1,151 @@
+console_title_template = '{{ .Shell }} in {{ .Folder }}'
+version = 3
+final_space = true
+
+[palette]
+  rosewater = "#f2d5cf"
+  flamingo = "#eebebe"
+  pink = "#f4b8e4"
+  mauve = "#ca9ee6"
+  red = "#e78284"
+  maroon = "#ea999c"
+  peach = "#ef9f76"
+  yellow = "#e5c890"
+  green = "#a6d189"
+  teal = "#81c8be"
+  sky = "#99d1db"
+  sapphire = "#85c1dc"
+  blue = "#8caaee"
+  lavender = "#babbf1"
+  text = "#c6d0f5"
+  subtext1 = "#b5bfe2"
+  subtext0 = "#a5adce"
+  overlay2 = "#949cbb"
+  overlay1 = "#838ba7"
+  overlay0 = "#737994"
+  surface2 = "#626880"
+  surface1 = "#51576d"
+  surface0 = "#414559"
+  base = "#303446"
+  mantle = "#292c3c"
+  crust = "#232634"
+
+[secondary_prompt]
+  template = '  '
+  foreground = 'p:green'
+  background = 'transparent'
+
+[transient_prompt]
+  template = ' '
+  foreground_templates = [
+    "{{if eq .Code 0}}p:green{{else}}p:yellow{{end}}"
+  ]
+  background = 'transparent'
+
+[upgrade]
+  source = 'cdn'
+  interval = '168h'
+  auto = false
+  notice = false
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'left'
+  newline = true
+
+  [[blocks.segments]]
+    leading_diamond = ''
+    trailing_diamond = ''
+    template = '{{ if .WSL }}WSL at {{ end }}{{.Icon}} '
+    foreground = 'p:crust'
+    background = 'p:red'
+    type = 'os'
+    style = 'diamond'
+
+  [[blocks.segments]]
+    template = '   {{ path .Path .Location }} '
+    foreground = 'p:crust'
+    powerline_symbol = ''
+    background = 'p:peach'
+    type = 'path'
+    style = 'powerline'
+
+    [blocks.segments.properties]
+      style = 'agnoster_short'
+      max_depth = 3
+
+  [[blocks.segments]]
+    template = ' {{ if .UpstreamURL }}{{ url .UpstreamIcon .UpstreamURL }} {{ end }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }} '
+    foreground = 'p:crust'
+    powerline_symbol = ''
+    background = 'p:green'
+    type = 'git'
+    style = 'powerline'
+    foreground_templates = ['{{ if or (.Working.Changed) (.Staging.Changed) }}p:crust{{ end }}', '{{ if and (gt .Ahead 0) (gt .Behind 0) }}p:text{{ end }}', '{{ if gt .Ahead 0 }}p:text{{ end }}']
+    background_templates = ['{{ if or (.Working.Changed) (.Staging.Changed) }}p:yellow{{ end }}', '{{ if and (gt .Ahead 0) (gt .Behind 0) }}p:red{{ end }}', '{{ if gt .Ahead 0 }}#49416D{{ end }}', '{{ if gt .Behind 0 }}#7A306C{{ end }}']
+
+    [blocks.segments.properties]
+      branch_template = '{{ trunc 25 .Branch }}'
+      fetch_status = true
+      fetch_upstream_icon = true
+
+  [[blocks.segments]]
+    template = '  '
+    foreground = 'p:text'
+    powerline_symbol = ''
+    background = 'p:yellow'
+    type = 'root'
+    style = 'powerline'
+
+  [[blocks.segments]]
+    leading_diamond = '<transparent,background></>'
+    trailing_diamond = ''
+    template = ' {{ if gt .Code 0 }}{{ else }}{{ end }} '
+    foreground = 'p:crust'
+    background = 'p:blue'
+    type = 'status'
+    style = 'diamond'
+    background_templates = ['{{ if gt .Code 0 }}p:red{{ end }}']
+
+    [blocks.segments.properties]
+      always_enabled = true
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'right'
+  overflow = 'hidden'
+
+  [[blocks.segments]]
+    type = 'executiontime'
+    foreground = 'p:crust'
+    background = 'p:yellow'
+    template = '{{ div .Ms 1000 }}s '
+    style = 'diamond'
+    leading_diamond = ''
+
+    [blocks.segments.properties]
+      threshold = 5000
+
+  [[blocks.segments]]
+    template = '{{ .CurrentDate | date "15:04:05" }}'
+    foreground = 'p:crust'
+    background = 'p:text'
+    type = 'time'
+    leading_diamond = ''
+    trailing_diamond = ''
+    style = 'diamond'
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'left'
+  newline = true
+  
+  [[blocks.segments]]
+    type = 'text'
+    style = 'plain'
+    foreground_templates = [
+      "{{if gt .Code 0}}p:red{{end}}",
+      "{{if eq .Code 0}}p:green{{end}}"
+    ]
+    background = 'transparent'
+    template = ''
