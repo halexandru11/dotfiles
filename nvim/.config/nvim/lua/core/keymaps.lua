@@ -5,6 +5,8 @@ keymap.set("n", "<leader>e", ":Ex<CR>", opts) -- show file tree
 keymap.set({ "i" }, "<C-c>", "<Esc>", opts) -- make Ctrl-C behave like Esc
 keymap.set("v", "p", '"_dP', opts) -- paste without yanking
 keymap.set("n", "x", '"_x', opts) -- delete single character without yanking
+keymap.set({ "n", "v" }, "<leader>y", [["+y]]) -- copy to system clipboard
+keymap.set("n", "<leader>Y", [["+Y]]) -- copy to system clipboard
 keymap.set("n", "<leader>rr", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gc<Left><Left><Left>") -- replace word under cursor
 
 keymap.set("n", "<C-d>", "<c-d>zz", opts) -- move down half page
