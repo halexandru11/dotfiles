@@ -132,8 +132,33 @@ case ":$PATH:" in
 esac
 # pnpm end
 
+if [ -d "$HOME/opt" ]; then
+  export PATH="$HOME/opt:$PATH"
+fi
+
 if [ -d "$HOME/.elan" ]; then
   export PATH="$HOME/.elan/bin:$PATH"
+fi
+
+if [ -d "$HOME/.opencode" ]; then
+  export PATH="$HOME/.opencode/bin:$PATH"
+fi
+
+if [ -d "$HOME/opt/flutter" ]; then
+  export PATH="$HOME/opt/flutter/bin:$PATH"
+fi
+
+if [ -d "$HOME/opt/NuSMV-2.7.1/bin/" ]; then
+  export PATH="$HOME/opt/NuSMV-2.7.1/bin:$PATH"
+fi
+
+if [ -d "$HOME/opt/tina-3.9.0/" ]; then
+  export PATH="$HOME/opt/tina-3.9.0/bin:$PATH"
+  export LD_LIBRARY_PATH="$HOME/opt/tina-3.9.0/lib:$LD_LIBRARY_PATH"
+fi
+
+if [ -f "/usr/bin/chromium-browser" ]; then
+  export CHROME_EXECUTABLE="/usr/bin/chromium-browser"
 fi
 
 . "$HOME/.local/bin/env"
