@@ -86,6 +86,8 @@ alias gfa='git fetch --all'
 alias gco='git checkout'
 alias gm='git merge'
 alias lg='lazygit'
+alias open='xdg-open'
+alias xclip='xclip -selection clipboard'
 
 # Shell integrations
 eval "$(fzf --zsh)"
