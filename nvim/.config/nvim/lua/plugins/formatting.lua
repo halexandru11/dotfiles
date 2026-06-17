@@ -1,4 +1,3 @@
--- [[ Formatting ]]
 vim.pack.add({ Gh("stevearc/conform.nvim") })
 require("conform").setup({
 	notify_on_error = false,
