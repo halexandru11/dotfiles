@@ -63,7 +63,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 ---@type table<string, vim.lsp.Config>
 local servers = {
 	-- clangd = {},
-	-- gopls = {},
+	gopls = {},
 	-- pyright = {},
 	-- rust_analyzer = {},
 	--
@@ -145,3 +145,11 @@ for name, server in pairs(servers) do
 	vim.lsp.config(name, server)
 	vim.lsp.enable(name)
 end
+
+-- LSP for TypeScript
+vim.pack.add({
+	Gh("nvim-lua/plenary.nvim"),
+	Gh("pmizio/typescript-tools.nvim"),
+})
+
+require("typescript-tools").setup({})
