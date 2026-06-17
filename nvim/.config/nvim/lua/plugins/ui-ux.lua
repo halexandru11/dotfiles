@@ -2,6 +2,20 @@
 vim.pack.add({ Gh("NMAC427/guess-indent.nvim") })
 require("guess-indent").setup({})
 
+-- Useful plugin to show you pending keybinds.
+vim.pack.add({ Gh("folke/which-key.nvim") })
+require("which-key").setup({
+	-- Delay between pressing a key and opening which-key (milliseconds)
+	delay = 1000,
+	icons = { mappings = vim.g.have_nerd_font },
+	-- Document existing key chains
+	spec = {
+		{ "<leader>f", group = "[F]ind & [F]ormat" },
+		{ "<leader>h", group = "Git [H]unk", mode = { "n", "v" } }, -- Enable gitsigns recommended keymaps first
+		{ "<leader>s", group = "[S]plit commands", mode = "n" }, -- Enable gitsigns recommended keymaps first
+	},
+})
+
 vim.pack.add({ Gh("folke/tokyonight.nvim") })
 ---@diagnostic disable-next-line: missing-fields
 require("tokyonight").setup({

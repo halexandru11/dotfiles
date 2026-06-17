@@ -61,10 +61,10 @@ require("gitsigns").setup({
 		end, { desc = "git [h]unk [Q]uickfix list (all files in repo)" })
 		map("n", "<leader>hq", gitsigns.setqflist, { desc = "git [h]unk [q]uickfix list (all changes in this file)" })
 		-- Toggles
-		map("n", "<leader>tb", gitsigns.toggle_current_line_blame, { desc = "[T]oggle git show [b]lame line" })
-		map("n", "<leader>tw", gitsigns.toggle_word_diff, { desc = "[T]oggle git intra-line [w]ord diff" })
+		map("n", "<leader>htb", gitsigns.toggle_current_line_blame, { desc = "[T]oggle git show [b]lame line" })
+		map("n", "<leader>htw", gitsigns.toggle_word_diff, { desc = "[T]oggle git intra-line [w]ord diff" })
 
 		-- Text object
-		map({ "o", "x" }, "ih", gitsigns.select_hunk)
+		map({ "o", "x" }, "hl", gitsigns.select_hunk, { desc = "git [h]unk se[l]ect" })
 	end,
 })

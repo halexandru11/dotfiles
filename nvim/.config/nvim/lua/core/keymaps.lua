@@ -46,9 +46,14 @@ vim.keymap.set("n", "<C-k>", "<C-w><C-k>", opts("Move focus to the upper window"
 vim.keymap.set({ "i" }, "<C-c>", "<Esc>", opts()) -- make Ctrl-C behave like Esc
 vim.keymap.set("v", "p", '"_dP', opts()) -- paste without yanking
 vim.keymap.set("n", "x", '"_x', opts()) -- delete single character without yanking
-vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], opts()) -- copy to system clipboard
-vim.keymap.set("n", "<leader>Y", [["+Y]], opts()) -- copy to system clipboard
-vim.keymap.set("n", "<leader>rr", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gc<Left><Left><Left>", opts()) -- replace word under cursor
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], opts("Copy to system clipboard"))
+vim.keymap.set({ "n", "v" }, "<leader>Y", [["+Y]], opts("Copy to system clipboard"))
+vim.keymap.set(
+	"n",
+	"<leader>rr",
+	":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gc<Left><Left><Left>",
+	opts("Replace whole word under cursor")
+)
 
 vim.keymap.set("n", "<C-d>", "<c-d>zz", opts()) -- move down half page
 vim.keymap.set("n", "<C-u>", "<c-u>zz", opts()) -- move up half page
@@ -60,12 +65,12 @@ vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", opts()) -- move line up
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", opts()) -- move line down
 
 -- window management
--- vim.keymap.set("n", "<leader>sv", "<C-w>v", opts()) -- split window vertically
--- vim.keymap.set("n", "<leader>sh", "<C-w>s", opts()) -- split window horizontally
--- vim.keymap.set("n", "<leader>so", "<C-w>o", opts()) -- close all windows except current
--- vim.keymap.set("n", "<leader>se", "<C-w>=", opts()) -- equalize window sizes
--- vim.keymap.set("n", "<leader>sx", ":close<CR>", opts()) -- close current window
--- vim.keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>", opts()) -- maximize current window
+vim.keymap.set("n", "<leader>sv", "<C-w>v", opts("[S]plit window [V]ertically"))
+vim.keymap.set("n", "<leader>sh", "<C-w>s", opts("[S]plit window [H]orizontally"))
+vim.keymap.set("n", "<leader>so", "<C-w>o", opts("Close all [o]ther windows"))
+vim.keymap.set("n", "<leader>se", "<C-w>=", opts("[S]plit [E]qualize window sizes"))
+vim.keymap.set("n", "<leader>sx", ":close<CR>", opts("Close current window"))
+vim.keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>", opts("[M]aximize current window"))
 
 -- resize windows
 vim.keymap.set("n", "<C-Up>", ":resize +2<CR>", opts()) -- resize window up
@@ -78,5 +83,5 @@ vim.keymap.set("v", "<", "<gv", opts()) -- indent left
 vim.keymap.set("v", ">", ">gv", opts()) -- indent right
 
 -- move trough quickfix list
-vim.keymap.set("n", "<C-S-n>", "<cmd>cnext<CR>zz", opts())
-vim.keymap.set("n", "<C-S-p>", "<cmd>cprev<CR>zz", opts())
+vim.keymap.set("n", "<C-n>", "<cmd>cnext<CR>zz", opts())
+vim.keymap.set("n", "<C-p>", "<cmd>cprev<CR>zz", opts())
